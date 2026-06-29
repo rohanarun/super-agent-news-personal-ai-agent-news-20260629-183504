@@ -1,0 +1,133 @@
+/* Font stack: Satoshi, Geist */
+:root {
+  --bg: #0b0d10;
+  --fg: #f5f7fa;
+  --muted: #a7adbb;
+  --accent: #6cf2c2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Satoshi', 'Geist', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+.hero {
+  padding: 4rem 2rem 6rem;
+  background: radial-gradient(1200px 600px at 20% 0%, #16202b, #0b0d10);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cta {
+  color: var(--bg);
+  background: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-inner {
+  max-width: 960px;
+  margin: 4rem auto 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.lede {
+  font-size: 1.125rem;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+main {
+  padding: 4rem 2rem;
+}
+
+.analysis, .super {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.analysis h2, .super h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.analysis a {
+  color: var(--accent);
+}
+
+/* Bento grid explicitly using dense auto-flow */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: 90px;
+  gap: 1rem;
+  grid-auto-flow: row dense;
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+}
+
+.tile {
+  grid-column: span 4;
+  grid-row: span 2;
+  background: #121722;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile.wide {
+  grid-column: span 8;
+}
+
+.tile.tall {
+  grid-row: span 3;
+}
+
+.tile h3 {
+  margin-top: 0;
+}
+
+.tile a {
+  margin-top: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .bento {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .tile, .tile.wide {
+    grid-column: span 6;
+  }
+}
